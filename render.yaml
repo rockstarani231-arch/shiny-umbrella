@@ -1,0 +1,29 @@
+services:
+  - type: web
+    name: sentinel-ai-online
+    runtime: docker
+    plan: starter
+    healthCheckPath: /healthz
+    envVars:
+      - key: DATABASE_PATH
+        value: /var/data/sentinel.sqlite3
+      - key: MAX_UPLOAD_MB
+        value: 25
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: OPENAI_MODEL
+        value: gpt-4.1-mini
+      - key: GOOGLE_SAFE_BROWSING_KEY
+        sync: false
+      - key: VIRUSTOTAL_API_KEY
+        sync: false
+      - key: TWILIO_LOOKUP_ENABLED
+        value: "false"
+      - key: TWILIO_ACCOUNT_SID
+        sync: false
+      - key: TWILIO_AUTH_TOKEN
+        sync: false
+    disk:
+      name: sentinel-data
+      mountPath: /var/data
+      sizeGB: 1
