@@ -19,7 +19,7 @@ SHIELD can also request browser permission for device notifications. Those alert
 
 - Message and SMS scans for common urgency, impersonation, payment, identity, investment, job, delivery, and credential theft patterns.
 - URL checks for suspicious structure and `.onion` or `.i2p` addresses without opening the destination.
-- Local phone-number checks against reports saved in the current browser.
+- Live US phone-number lookups against FTC unwanted-call complaint data through the USACallerLookup public API, combined with reports saved in the current browser. The lookup supports US numbers only; complaint records are unverified and caller ID may be spoofed.
 - A fictional call sample inbox with a local demo block list. It does not intercept or block actual phone calls.
 - File metadata and SHA-256 fingerprint inspection in the browser. This does not scan files for malware.
 - Local activity history, reports, privacy controls, and appearance settings.
@@ -28,7 +28,7 @@ SHIELD can also request browser permission for device notifications. Those alert
 
 ## Scope and limitations
 
-The published static site requires no API key or backend. Scans use transparent patterns and do not query live threat feeds. Dark web detection identifies address suffixes; it does not visit, verify, or assess dark web content. SMS and call blocking cannot be performed by a website; use your device or carrier's built-in controls for real blocking. Results are guidance, not a guarantee of safety. Caller IDs can be spoofed.
+The published static site requires no API key or backend. Phone lookups send a US number to USACallerLookup's public API, which says its complaint data comes from FTC Do Not Call reports and is typically refreshed each weekday. FTC complaint data consists of consumer reports and is not verified; it describes the displayed caller ID, which can be spoofed. A number with no matching complaint is not proven safe. International numbers fall back to local reports only. Other scans use transparent patterns and do not query live threat feeds. Dark web detection identifies address suffixes; it does not visit, verify, or assess dark web content. SMS and call blocking cannot be performed by a website; use your device or carrier's built-in controls for real blocking. Results are guidance, not a guarantee of safety.
 
 Profiles, scan history, scam notifications, reports, demo account records, and call-block entries stay in this browser. The active login session is cleared when you log out or close the browser tab. The sidebar scrolls independently on shorter desktop displays so its lower controls stay reachable.
 
