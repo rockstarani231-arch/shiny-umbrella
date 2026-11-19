@@ -12,5 +12,4 @@ body.dark-theme{--bg:#111a17;--panel:#19231f;--panel-2:#151e1a;--ink:#e7eee9;--m
 @media(max-width:760px){.top-profile-btn{padding:3px}.top-profile-btn>span:last-child{display:none}.top-profile-picture{width:26px;height:26px;flex-basis:26px}}
 .notification-actions{display:flex;align-items:center;gap:11px}.notification-actions .text-btn{white-space:nowrap}.notification-head{gap:10px}.notification-actions #clearNotifications{color:var(--red)}body.ocean-theme .lead,body.ocean-theme .field-hint,body.ocean-theme .activity-info small,body.ocean-theme .empty-state p{color:#aac4d4}
 @media(max-width:920px) and (min-width:761px){.main{padding:0 22px}.top-actions{gap:7px}.local-badge{font-size:0}.local-badge .live-dot{width:8px;height:8px}.top-profile-btn{padding:3px}.top-profile-btn>span:last-child{display:none}.help-btn{font-size:0}.help-btn span{font-size:15px}.notification-btn{padding:7px 8px}}
- .setting-inline{display:flex;align-items:center;gap:8px;min-width:min(460px,52%)}.setting-inline input{min-width:0;flex:1;border:1px solid var(--line);border-radius:7px;background:var(--panel-2);color:var(--ink);padding:10px 12px;font-size:12px}.setting-inline input:focus{outline:2px solid var(--green);outline-offset:1px}.setting-inline .outline-btn{white-space:nowrap}@media(max-width:600px){.setting-inline{width:100%;min-width:0}.setting-inline input{width:100%}}
-
+ 
