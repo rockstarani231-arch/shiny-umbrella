@@ -13,7 +13,7 @@ services:
         sync: false
       - key: OPENAI_MODEL
         value: gpt-4.1-mini
-      - key: GOOGLE_WEB_RISK_KEY
+      - key: GOOGLE_SAFE_BROWSING_KEY
         sync: false
       - key: VIRUSTOTAL_API_KEY
         sync: false
