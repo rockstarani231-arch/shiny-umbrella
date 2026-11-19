@@ -6,7 +6,7 @@ SHIELD is a browser based scam awareness workspace published with GitHub Pages. 
 
 You can create an account, sign in, and sign out. Accounts and profiles are stored in this browser and do not sync to another device or provide server-backed identity or recovery. Passwords are hashed with PBKDF2 before browser storage, but browser storage is controlled by the device owner. Use a unique password and do not store sensitive information here.
 
-Messages, SMS, links, and files are checked in the browser. Indian phone numbers are checked against reports saved in this browser; there is no live national caller reputation database connected. Suspected fraud can be reported through Chakshu on Sanchar Saathi. If money was lost, call India’s cybercrime helpline at 1930. SHIELD does not connect to live URL threat feeds or an AI service. Its URL and message checks use local rules and cannot guarantee safety.
+Messages, SMS, links, and files are checked in the browser. Indian phone numbers are checked against reports saved in this browser; there is no live national caller reputation database connected. The official I4C suspect repository can be searched manually and uses a CAPTCHA; its entries are complaint based and may contain errors or be outdated. Suspected fraud can be reported through Chakshu on Sanchar Saathi. If money was lost, call India’s cybercrime helpline at 1930. SHIELD does not connect to live URL threat feeds or an AI service. Its URL and message checks use local rules and cannot guarantee safety.
 
 ## Features
 
