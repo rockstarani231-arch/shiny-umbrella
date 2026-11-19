@@ -20,7 +20,6 @@ SHIELD can also request browser permission for device notifications. Those alert
 - Message and SMS scans for common urgency, impersonation, payment, identity, investment, job, delivery, and credential theft patterns.
 - URL checks for suspicious structure and `.onion` or `.i2p` addresses without opening the destination.
 - Live US phone-number lookups against FTC unwanted-call complaint data through the USACallerLookup public API, combined with reports saved in the current browser. The lookup supports US numbers only; complaint records are unverified and caller ID may be spoofed.
-- Optional AI-assisted URL review plus live Google Web Risk and VirusTotal reputation checks through a private SHIELD backend. URL text is sent to the configured backend and enabled providers; page content is not fetched by SHIELD.
 - A fictional call sample inbox with a local demo block list. It does not intercept or block actual phone calls.
 - File metadata and SHA-256 fingerprint inspection in the browser. This does not scan files for malware.
 - Local activity history, reports, privacy controls, and appearance settings.
@@ -29,11 +28,9 @@ SHIELD can also request browser permission for device notifications. Those alert
 
 ## Scope and limitations
 
-The GitHub Pages site runs without a backend by default. Phone lookups send a US number to USACallerLookup's public API, which says its complaint data comes from FTC Do Not Call reports and is typically refreshed each weekday. FTC complaint data consists of consumer reports and is not verified; it describes the displayed caller ID, which can be spoofed. A number with no matching complaint is not proven safe. International numbers fall back to local reports only.
+The GitHub Pages site runs without a backend by default. Phone lookups send a US number to USACallerLookup's public API, which says its complaint data comes from FTC Do Not Call reports and is typically refreshed each weekday. FTC complaint data consists of consumer reports and is not verified; it describes the displayed caller ID, which can be spoofed. A number with no matching complaint is not proven safe. International numbers fall back to local reports only. The URL checker uses local structural analysis and does not send URLs to an external service.
 
-The URL checker runs local structural analysis immediately. To enable server-side URL checks, deploy the included Flask service and enter its HTTPS address under Settings → URL analysis server. Configure `OPENAI_API_KEY` for an AI review of the URL string, `GOOGLE_WEB_RISK_KEY` for Google's threat list lookup, and/or `VIRUSTOTAL_API_KEY` for an existing VirusTotal report. Keep these keys in the backend environment; never put them in the webpage. Google Web Risk has a free allowance and can incur charges beyond it. VirusTotal's public API has usage limits and may not be used in commercial products. The SHIELD server has not been deployed as part of this static GitHub Pages update, so online URL checks remain optional until a server is connected and configured.
 
-When enabled, the URL is shared with the configured service providers. Do not submit private links containing access tokens or reset codes. The AI sees only the URL text and cannot inspect page contents; reputation feeds can miss new or changed threats. A clean result is not a guarantee of safety. Dark web detection identifies address suffixes; it does not visit, verify, or assess dark web content. SMS and call blocking cannot be performed by a website; use your device or carrier's built-in controls for real blocking.
 
 Profiles, scan history, scam notifications, reports, demo account records, and call-block entries stay in this browser. The active login session is cleared when you log out or close the browser tab. The sidebar scrolls independently on shorter desktop displays so its lower controls stay reachable.
 
