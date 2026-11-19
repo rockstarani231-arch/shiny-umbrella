@@ -56,4 +56,5 @@ function clearData(){scans=[];reports=[];save();['#messageResult','#urlResult','
 render();const initial=location.hash.slice(1);if(initial)navigate(initial);
 const loginOverlay=$('#loginOverlay');if(store.get('demoSignedIn',false))loginOverlay.classList.add('hidden');$('#loginForm').onsubmit=e=>{e.preventDefault();if($('#demoUsername').value.trim()==='rocky'&&$('#demoPassword').value==='ShieldDemo26!'){store.set('demoSignedIn',true);loginOverlay.classList.add('hidden');toast('Demo workspace opened')}else toast('Use the sample username and password shown above')};
 $('#logoutBtn').onclick=()=>{store.set('demoSignedIn',false);loginOverlay.classList.remove('hidden');$('#demoPassword').value=''};
+$('#guestEntry').onclick=()=>{loginOverlay.classList.add('hidden');toast('Workspace opened in guest mode')};
 })();
