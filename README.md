@@ -7,7 +7,7 @@ SHIELD is a browser-based scam-awareness demo published with GitHub Pages. It pr
 - Username: `rocky`
 - Password: `ShieldDemo26!`
 
-This is a front-end demonstration only. The credentials are visible in the page source and are not authentication. You can also choose “Continue as guest.” Do not reuse a real password or enter sensitive account information.
+This is a front-end demonstration only. The app opens directly in guest mode; use the profile icon to open the sample portal. The credentials are visible in the page source and are not authentication. Do not reuse a real password or enter sensitive account information.
 
 ## Features
 
