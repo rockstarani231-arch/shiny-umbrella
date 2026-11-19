@@ -1,38 +1,25 @@
 # SHIELD
 
-SHIELD is a browser-based scam-awareness demo published with GitHub Pages. It provides local pattern checks for messages and SMS, suspicious URL and dark web address warnings, phone-number reports, file metadata inspection, and a simulated call-screening sample inbox.
+SHIELD is a browser based scam awareness workspace published with GitHub Pages. It provides local pattern checks for messages and SMS, local URL structure warnings including dark web address detection, public complaint lookups for US phone numbers, a personal caller watchlist, file metadata and SHA-256 inspection, saved reports, account profiles, alerts, and appearance settings.
 
-## Login, sign-up, and logout
+## Accounts and privacy
 
-- Username: `shieldadmin` (display name: SHIELD Admin)
-- Password: `ShieldDemo26!`
+You can create an account, sign in, and sign out. Accounts and profiles are stored in this browser and do not sync to another device or provide server-backed identity or recovery. Passwords are hashed with PBKDF2 before browser storage, but browser storage is controlled by the device owner. Use a unique password and do not store sensitive information here.
 
-The account dialog supports login, sign-up, and logout. New demo accounts are stored in this browser, with passwords hashed using PBKDF2; the active session lasts for the current browser tab. This is client-side demo behavior, not production authentication: the sample credentials are visible in the page source, and local browser storage can be changed by its owner. Do not reuse a real password or enter sensitive account information.
-
-The workspace opens in guest mode. Use “Log in / Sign up” to open account options.
-
-Each login has its own local profile (display name and short introduction) and scam-alert inbox. High-risk scan results add an in-app notification and play a 5–7 second ringing alert. The ringing tone can be muted in Settings. Five sample messages rotate each time “Try a sample” is clicked. The Ocean appearance adds a blue water theme.
-
-SHIELD can also request browser permission for device notifications. Those alerts appear while this site is open. True background web push after the site is closed requires a push server and VAPID keys, which this static GitHub Pages site does not provide. Profiles and alerts stay in this browser.
+Messages, SMS, links, and files are checked in the browser. Phone number lookups send the number to USACallerLookup to retrieve public complaint records; those reports are unverified and caller ID may be spoofed. SHIELD does not connect to live URL threat feeds or an AI service. Its URL and message checks use local rules and cannot guarantee safety.
 
 ## Features
 
-- Message and SMS scans for common urgency, impersonation, payment, identity, investment, job, delivery, and credential theft patterns.
-- URL checks for suspicious structure and `.onion` or `.i2p` addresses without opening the destination.
-- Live US phone-number lookups against FTC unwanted-call complaint data through the USACallerLookup public API, combined with reports saved in the current browser. The lookup supports US numbers only; complaint records are unverified and caller ID may be spoofed.
-- A fictional call sample inbox with a local demo block list. It does not intercept or block actual phone calls.
-- File metadata and SHA-256 fingerprint inspection in the browser. This does not scan files for malware.
-- Local activity history, reports, privacy controls, and appearance settings.
-- Account-specific profiles, sample profile image, and an in-app notification tab with a clear option for high-risk scam detections.
-- Optional browser device alerts, configurable sound alerts, and Midnight, Daylight, and Ocean appearance modes.
+- Message and SMS pattern analysis, with rotating example messages
+- URL structure inspection and detection of `.onion` and `.i2p` addresses without opening them
+- Live US unwanted-call complaint lookup and a personal watchlist
+- File metadata and SHA-256 fingerprint inspection in the browser; this is not antivirus scanning
+- Local check history, saved reports, profiles, notifications, and clear controls
+- 5–7 second ringing alert for high-risk results, optional browser notifications while the page is open, and Midnight, Daylight, and Ocean appearances
 
-## Scope and limitations
+A website cannot intercept phone calls or block SMS on your device. The watchlist saves numbers in this browser; use your phone or carrier’s own tools to block calls and messages. Device notifications require browser permission and do not work in the background without a push service.
 
-The GitHub Pages site runs without a backend by default. Phone lookups send a US number to USACallerLookup's public API, which says its complaint data comes from FTC Do Not Call reports and is typically refreshed each weekday. FTC complaint data consists of consumer reports and is not verified; it describes the displayed caller ID, which can be spoofed. A number with no matching complaint is not proven safe. International numbers fall back to local reports only. The URL checker uses local structural analysis and does not send URLs to an external service.
+## Development
 
-
-
-Profiles, scan history, scam notifications, reports, demo account records, and call-block entries stay in this browser. The active login session is cleared when you log out or close the browser tab. The sidebar scrolls independently on shorter desktop displays so its lower controls stay reachable.
-
-Developed by Dhruv Goyal & Team.
+This is a static site. Open `index.html` directly or serve this folder with any static web server. The optional Python files are not required for GitHub Pages.
 
