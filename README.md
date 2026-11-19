@@ -2,12 +2,14 @@
 
 SHIELD is a browser-based scam-awareness demo published with GitHub Pages. It provides local pattern checks for messages and SMS, suspicious URL and dark web address warnings, phone-number reports, file metadata inspection, and a simulated call-screening sample inbox.
 
-## Demo login
+## Login, sign-up, and logout
 
 - Username: `rocky`
 - Password: `ShieldDemo26!`
 
-This is a front-end demonstration only. The app opens directly in guest mode; use the profile icon to open the sample portal. The credentials are visible in the page source and are not authentication. Do not reuse a real password or enter sensitive account information.
+The account dialog supports login, sign-up, and logout. New demo accounts are stored in this browser, with passwords hashed using PBKDF2; the active session lasts for the current browser tab. This is client-side demo behavior, not production authentication: the sample credentials are visible in the page source, and local browser storage can be changed by its owner. Do not reuse a real password or enter sensitive account information.
+
+The workspace opens in guest mode. Use “Log in / Sign up” to open account options.
 
 ## Features
 
@@ -22,4 +24,6 @@ This is a front-end demonstration only. The app opens directly in guest mode; us
 
 The published static site requires no API key or backend. Scans use transparent patterns and do not query live threat feeds. Dark web detection identifies address suffixes; it does not visit, verify, or assess dark web content. SMS and call blocking cannot be performed by a website; use your device or carrier's built-in controls for real blocking. Results are guidance, not a guarantee of safety. Caller IDs can be spoofed.
 
-All scan history, local reports, demo login state, and demo call-block entries are stored in this browser's local storage and can be cleared from the app or browser settings.
+Scan history, reports, demo account records, and call-block entries stay in this browser. The active login session is cleared when you log out or close the browser tab.
+
+Developed by Dhruv Goyal & Team.
