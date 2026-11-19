@@ -1,7 +1,7 @@
 (()=>{
 const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
 const store={get(k,f){try{return JSON.parse(localStorage.getItem('shield_'+k))??f}catch{return f}},set(k,v){try{localStorage.setItem('shield_'+k,JSON.stringify(v))}catch{}}};
-let scans=store.get('scans',[]),reports=store.get('reports',[]),settings={theme:'dark',save:true,sound:true,deviceNotifications:false,...store.get('settings',{})},toastTimer,blockedCalls=store.get('blockedCalls',[]);
+let scans=store.get('scans',[]),reports=store.get('reports',[]),settings={theme:'dark',save:true,sound:true,deviceNotifications:false,...store.get('settings',{})},toastTimer,blockedCalls=store.get('blockedCalls',[]).filter(n=>{const d=String(n).replace(/\D/g,'');return(d.length===10&&/^[6-9]/.test(d))||(d.length===12&&d.startsWith('91')&&/^[6-9]/.test(d.slice(2)))}) ;if(blockedCalls.length!==store.get('blockedCalls',[]).length)store.set('blockedCalls',blockedCalls);
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const niceDate=d=>new Date(d).toLocaleString(undefined,{month:'short',day:'numeric',hour:'numeric',minute:'2-digit'});
 const iconFor=t=>({'Message scan':'✳','SMS scan':'✉','Link check':'↗','Phone check':'⌕','Call screen':'◉','File inspection':'◇'}[t]||'✳');
