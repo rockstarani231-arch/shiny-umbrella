@@ -15,3 +15,5 @@ body.dark-theme{--bg:#111a17;--panel:#19231f;--panel-2:#151e1a;--ink:#e7eee9;--m
 
 .call-watch-action{display:flex;align-items:center;gap:12px;margin-top:12px}.call-watch-action small{color:var(--muted);font-size:11px}
 
+.sample-login-panel{display:grid;gap:7px;padding:11px 12px;border:1px solid var(--line,#2a3730);border-radius:8px;background:var(--panel-2,#151e1a)}.sample-login-panel>div{display:grid;gap:3px}.sample-login-panel b{font-size:11px}.sample-login-panel small,.sample-login-panel p{margin:0;color:#9aa89f;font-size:10px;line-height:1.6}.sample-login-panel code{color:var(--ink,#e7eee9);font-size:10px}
+
