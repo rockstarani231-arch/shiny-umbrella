@@ -8,6 +8,15 @@ You can create an account, sign in, and sign out. Accounts and profiles are stor
 
 Messages, SMS, links, and files are checked in the browser. Indian phone numbers are checked against reports saved in this browser; there is no live national caller reputation database connected. The official I4C suspect repository can be searched manually and uses a CAPTCHA; its entries are complaint based and may contain errors or be outdated. Suspected fraud can be reported through Chakshu on Sanchar Saathi. If money was lost, call India’s cybercrime helpline at 1930. SHIELD does not connect to live URL threat feeds or an AI service. Its URL and message checks use local rules and cannot guarantee safety.
 
+## Sample login
+
+The account screen includes a public sample login for trying the profile and account interface:
+
+- Username: `shieldadmin`
+- Password: `ShieldDemo26!`
+
+This credential is intentionally public and is not secure for private use. Sample account data stays in that browser and is not shared with a server. Do not enter sensitive information.
+
 ## Features
 
 - Message and SMS pattern analysis, with rotating example messages
